@@ -1,0 +1,15 @@
+files:
+  - from: node_modules
+    to: node_modules
+  - from: src/resources
+    to: .
+  - from: src
+    to: .
+    filter:
+      - "**/*"
+      - "!src/node_modules/**/*"
+
+directories:
+  output: dist
+  buildResources: src/resources
+  

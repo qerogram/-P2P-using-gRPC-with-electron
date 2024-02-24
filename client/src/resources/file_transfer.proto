@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package filetransfer;
+
+message TransferRequest {
+  string filename = 1;
+}
+
+message Chunk {
+  bytes content = 1;
+}
+
+message ListFilesRequest {}
+
+message ListFilesResponse {
+  repeated string filenames = 1;
+}
+
+service FileTransferService {
+  // 기존의 파일 전송 메서드
+  rpc TransferFile(TransferRequest) returns (stream Chunk) {}
+
+  // 파일 목록을 요청하는 메서드
+  rpc ListFiles(ListFilesRequest) returns (ListFilesResponse) {}
+}
+

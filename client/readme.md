@@ -1,11 +1,3 @@
-# P2P-using-gRPC-with-electron
-
-# server
-
-## Execute
-1. docker build . -t grpc_server
-2. docker run -v ./files:/app/files -p 8282:8282 -itd grpc_server 
-
 # client
 
 ##  Execute
